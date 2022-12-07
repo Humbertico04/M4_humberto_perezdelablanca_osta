@@ -86,7 +86,7 @@ print("Total papeles para actores en la década de los 50's:", len(dfe[(dfe["typ
 print("\n")
 
 #Mostrar cuantos papeles para actrices hubo en la década de los 50's
-print("Total papeles para actores en la década de los 50's:", len(dfe[(dfe["type"]=="actress") & (dfe["year"]>=1950) & (dfe["year"]<=1959)]))
+print("Total papeles para actrices en la década de los 50's:", len(dfe[(dfe["type"]=="actress") & (dfe["year"]>=1950) & (dfe["year"]<=1959)]))
 print("\n")
 
 if __name__ == "__main__":
