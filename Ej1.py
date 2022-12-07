@@ -52,3 +52,35 @@ print("\n")
 #Mostrar cuantas peliculas fueron hechas en el año 1950
 print("Películas hechas en 1950:", len(dft[dft["year"]==1950]))
 print("\n")
+
+#Mostrar cuantas peliculas fueron hechas de 1950 a 1959
+print("Películas hechas entre 1950 y 1959:", len(dft[(dft["year"]>=1950) & (dft["year"]<=1959)]))
+print("\n")
+
+#Mostrar todos los roles o papeles que hubo en la pelicula "The Godfather". También mostrar el número total de coincidencias
+gf=dfe[dfe["title"]==("The Godfather")].reset_index()
+print("Los papeles en The Godfather son: \n", gf, "\nTotal papeles:", len(gf))
+print("\n")
+
+#Mostrar el elenco completo ordenado por la clasificacion "n" de la pelicula "Dracula" de 1958
+drac=dfe[(dfe["title"]==("Dracula")) & (dfe["year"]==1958)].sort_values(by="n").reset_index()
+print("Elenco de Dracula de 1958 ordenado por importancia: \n", drac)
+print("\n")
+
+#Mostrar cuantos papeles de "Bruce Wayne" han sido hechos en la historia de las peliculas
+print("Total papeles de Bruce Wayne:", len(dfe[dfe["character"]=="Bruce Wayne"]))
+print("\n")
+
+#Mostrar cuantos papeles ha hecho "Robert De Niro" en su carrera
+print("Total papeles de Robert De Niro:", len(dfe[dfe["name"]=="Robert De Niro"]))
+print("\n")
+
+#Listado de papeles como protagonista (n=1) que tuvo el actor "Charlton Heston" en la década de los 60's, ordenado por año de forma descendente
+print(dfe[(dfe["n"]==1) & (dfe["name"]=="Charlton Heston") & (dfe["year"]>=1960) & (dfe["year"]<=1969)].sort_values(by="year", ascending=False).reset_index().drop(['index'], axis=1))
+print("\n")
+
+#Mostrar cuantos papeles para actores hubo en la década de los 50's
+print("Total papeles para actores en la década de los 50's:", len(dfe[(dfe["n"]==1) & (dfe["year"]>=1950) & (dfe["year"]<=1959)]))
+print("\n")
+
+#Mostrar cuantos papeles para actrices hubo en la década de los 50's
